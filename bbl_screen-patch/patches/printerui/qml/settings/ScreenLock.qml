@@ -95,8 +95,11 @@ Rectangle {
     }
 
     function popNumberPad() {
-        isEnteringPasscode = true;
-        numberPad.target = top;
+        /* Prevent the NumberPad from popping if already entering Passcode */
+        if (!isEnteringPasscode) { 
+            isEnteringPasscode = true;
+            numberPad.target = top;
+        }
     }
 
     ColumnLayout {
